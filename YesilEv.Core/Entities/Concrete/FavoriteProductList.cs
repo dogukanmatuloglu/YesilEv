@@ -7,11 +7,12 @@ using YesilEv.Core.Entities.Abstract;
 
 namespace YesilEv.Core.Entities.Concrete
 {
-    public class Claim:IEntityBase
+    public class FavoriteProductList:IEntityBase//Favori Ürünlerin tablosu
     {
-        public string Name { get; set; }
 
-        //IEntityBaseden gelen propertyler
+        
+
+        //
         public int Id { get; set; }
         public bool IsActive { get; set; }
         public DateTime CreatedDate { get; set; }
@@ -19,10 +20,11 @@ namespace YesilEv.Core.Entities.Concrete
         public int CreatedBy { get; set; }
         public int ModifiedBy { get; set; }
 
-        // navigation Property
-        //claim-role arasında çokaçok ilişki vardır.
-        public ICollection<Role> Roles { get; set; }
 
+        //navigation property
+
+        public ICollection<User> Users { get; set; }
+        public ICollection<Product>  Products { get; set; }
 
     }
 }

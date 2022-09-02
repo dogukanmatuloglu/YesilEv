@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace YesilEv.WinForm
 {
-    public partial class Form1 : Form
+    public partial class FrmMainForm : Form
     {
-        public Form1()
+        public FrmMainForm()
         {
             InitializeComponent();
         }
