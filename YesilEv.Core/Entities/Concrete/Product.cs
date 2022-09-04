@@ -27,10 +27,12 @@ namespace YesilEv.Core.Entities.Concrete
         public int ModifiedBy { get; set; }
         public int? SupplierId { get; set; }
         public int? CategoryId { get; set; }
+        public int? UserId { get; set; }
 
         //NavigationProperty
         public Category Category { get; set; }
         public Supplier Supplier { get; set; }
+        public User User { get; set; }
         public ICollection<Content> Contents { get; set; }
 
         public ICollection<FavoriteProductList> FavoriteProductLists { get; set; }

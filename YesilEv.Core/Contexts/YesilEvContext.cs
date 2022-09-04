@@ -43,9 +43,11 @@ namespace YesilEv.Core.Contexts
             modelBuilder.Entity<BlackListProductContent>().HasMany<User>(b => b.Users).WithOptional(u => u.BlackListProductContent).HasForeignKey(u => u.BlackListProductContentId); //blacklistproductcontent user bire çok
            
             modelBuilder.Entity<FavoriteProductList>().HasMany<User>(f => f.Users).WithOptional(u => u.FavoriteProductList).HasForeignKey(u => u.FavoriteProductListId);
-            modelBuilder.Entity<ContentType>().HasMany<Content>(ct => ct.Contents).WithOptional(c => c.ContentType).HasForeignKey(c => c.ContentId);
+            modelBuilder.Entity<ContentType>().HasMany<Content>(ct => ct.Contents).WithOptional(c => c.ContentType).HasForeignKey(c => c.ContentTypeId);
             modelBuilder.Entity<User>().HasMany<SearchHistory>(u => u.SearchHistories).WithOptional(s => s.User).HasForeignKey(s => s.UserId);
             modelBuilder.Entity<Category>().HasMany<Category>(u => u.Categories).WithOptional(c => c.TopCategory).HasForeignKey(c => c.TopCategoryId);
+            
+            modelBuilder.Entity<User>().HasMany<Product>(u => u.Products).WithOptional(p => p.User).HasForeignKey(p => p.UserId);
 
 
             //modelBuilder.Entity<FavoriteProductList>().HasMany<Product>(f=>f.Products).WithRequired(p=>p.)
@@ -67,8 +69,7 @@ namespace YesilEv.Core.Contexts
                 fp.ToTable("FavoriteProductListIdProduct");
 
             });
-            modelBuilder.Entity<User>().Property(u => u.CreatedDate).HasColumnAnnotation("Default", "getdate()");
-            modelBuilder.Entity<User>().Property(u => u.ModifiedDate).HasColumnAnnotation("Default", "getdate()");
+        
 
             modelBuilder.Entity<User>().Property(u => u.CreatedDate).IsOptional();
             modelBuilder.Entity<User>().Property(u => u.ModifiedDate).IsOptional();

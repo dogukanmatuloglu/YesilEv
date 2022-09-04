@@ -14,6 +14,7 @@ namespace YesilEv.WinForm
 {
     public partial class FrmLoginRegisterForm : Form
     {
+        static int UserId;
         public FrmLoginRegisterForm()
         {
             InitializeComponent();
@@ -26,6 +27,9 @@ namespace YesilEv.WinForm
             if (isLogin)
             {
                 MessageBox.Show("Başarılı Giriş");
+                FrmMainForm frmMainForm = new FrmMainForm();
+                frmMainForm.Show();
+                
             }
         }
 

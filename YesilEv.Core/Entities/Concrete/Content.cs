@@ -19,7 +19,7 @@ namespace YesilEv.Core.Entities.Concrete
         public DateTime ModifiedDate { get; set; }
         public int CreatedBy { get; set; }
         public int ModifiedBy { get; set; }
-        public int? ContentId { get; set; }
+        public int? ContentTypeId { get; set; }
 
         //NavigationProperty
         public ICollection<Product> Products { get; set; }

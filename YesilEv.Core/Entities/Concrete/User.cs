@@ -30,6 +30,7 @@ namespace YesilEv.Core.Entities.Concrete
         public BlackListProductContent BlackListProductContent { get; set; }
         public FavoriteProductList FavoriteProductList { get; set; }
         public ICollection<SearchHistory> SearchHistories { get; set; }
+        public ICollection<Product> Products { get; set; }
 
 
     }

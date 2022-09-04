@@ -7,9 +7,7 @@ using YesilEv.Core.Entities.Concrete;
 
 namespace YesilEv.Dal.Repositories.Abstract
 {
-    public interface IUserRepository:IGenericRepository<User>
+    public interface IProductRepository:IGenericRepository<Product> 
     {
-        bool Login(string email,string password);
-        
     }
 }
